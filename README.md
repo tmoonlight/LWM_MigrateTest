@@ -9,8 +9,8 @@
 ## 特性
 
 - [现代化的CMake实践](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/)
-- 适用于任何规模的单头库和项目
-- 库和可执行代码的干净分离
+- 兼容单头库以及任意规模的项目
+- 库和可执行代码完全分离
 - 集成测试套件
 - 通过[GitHub Actions](https://help.github.com/en/actions/)进行持续集成
 - 通过[codecov]进行代码覆盖(https://codecov.io)
