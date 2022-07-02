@@ -31,6 +31,23 @@ jobs:
 
       - name: build
         run: cmake --build build --config Debug -j4
+        
+      - name: Zip Release
+
+        uses: TheDoctor0/zip-release@0.6.2
+        with:
+          # Filename for archive
+          filename: mac_debug.zip
+          # Base path for archive files
+          path: ${{ github.workspace }}/build/_deps/fmt-build/Debug/
+          # Working directory before zipping
+          directory: ${{ github.workspace }}/build/_deps/fmt-build/Debug/
+          # List of excluded files / directories
+          # exclusions: # optional, default is 
+          # List of excluded files / directories with recursive wildcards (only applies on Windows with `zip` type)
+          # recursive_exclusions: # optional, default is 
+          # Tool to use for archiving
+          type: zip
 
       - name: test
         run: |
