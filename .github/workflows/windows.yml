@@ -32,30 +32,30 @@ jobs:
       - name: build
         run: cmake --build build --config Debug -j4
         
-      - name: Zip Release
+      #- name: Zip Release
 
-        uses: TheDoctor0/zip-release@0.6.2
-        with:
-          # Filename for archive
-          filename: mac_debug.zip
-          # Base path for archive files
-          path: ${{ github.workspace }}/build/_deps/fmt-build/Debug/
-          # Working directory before zipping
-          directory: ${{ github.workspace }}/build/_deps/fmt-build/Debug/
-          # List of excluded files / directories
-          # exclusions: # optional, default is 
-          # List of excluded files / directories with recursive wildcards (only applies on Windows with `zip` type)
-          # recursive_exclusions: # optional, default is 
-          # Tool to use for archiving
-          type: zip
+      #  uses: TheDoctor0/zip-release@0.6.2
+      #  with:
+      #    # Filename for archive
+      #    filename: mac_debug.zip
+      #    # Base path for archive files
+      #    path: ${{ github.workspace }}/build/_deps/fmt-build/Debug/
+      #    # Working directory before zipping
+      #    directory: ${{ github.workspace }}/build/_deps/fmt-build/Debug/
+      #    # List of excluded files / directories
+      #    # exclusions: # optional, default is 
+      #    # List of excluded files / directories with recursive wildcards (only applies on Windows with `zip` type)
+      #    # recursive_exclusions: # optional, default is 
+      #    # Tool to use for archiving
+      #    type: zip
 
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3.0.0
         with:
           # Artifact name
-          name: arzip
+          name: mac_debug
           # Destination path
-          path: ${{ github.workspace }}/build/_deps/fmt-build/Debug/mac_debug.zip
+          path: ${{ github.workspace }}/build/_deps/fmt-build/Debug/
       - name: test
         run: |
           cd build
